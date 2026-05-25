@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/aleks/Desktop/random/simulation/modelsim
+Erandom
+Z1 w1671354361
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/aleks/Desktop/random/random.vhd
+Z6 FC:/Users/aleks/Desktop/random/random.vhd
+l0
+L5
+VhhW3MK[1XHZ;F0JHSc;]U2
+!s100 =Qmh59LE0hV:fY06aWS2:2
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1671354441
+!i10b 1
+Z9 !s108 1671354441.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/aleks/Desktop/random/random.vhd|
+Z11 !s107 C:/Users/aleks/Desktop/random/random.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+DEx4 work 6 random 0 22 hhW3MK[1XHZ;F0JHSc;]U2
+l28
+L19
+V>z0G8m8Lj8B3?96A<@TWi1
+!s100 W@00n@iol>2^VYc4F>l042
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Erandom_vhd_tst
+Z14 w1671303481
+R3
+R4
+R0
+Z15 8C:/Users/aleks/Desktop/random/simulation/modelsim/random.vht
+Z16 FC:/Users/aleks/Desktop/random/simulation/modelsim/random.vht
+l0
+L30
+VXAi_RD`lMO65DN<^N?mZ=0
+!s100 0JAKIgLOBo8zh2:LkTZoO0
+R7
+32
+Z17 !s110 1671354442
+!i10b 1
+Z18 !s108 1671354442.000000
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/aleks/Desktop/random/simulation/modelsim/random.vht|
+Z20 !s107 C:/Users/aleks/Desktop/random/simulation/modelsim/random.vht|
+!i113 1
+Z21 o-work work
+R13
+Arandom_arch
+R3
+R4
+Z22 DEx4 work 14 random_vhd_tst 0 22 XAi_RD`lMO65DN<^N?mZ=0
+l61
+L32
+Z23 VhFU]Q`G[O]ei4H?3Z0FVc3
+Z24 !s100 jza1lQA;W7gU2HnPlKW8^2
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R21
+R13

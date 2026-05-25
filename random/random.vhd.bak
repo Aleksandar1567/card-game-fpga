@@ -1,0 +1,32 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY random IS
+  PORT (Clk, Rst: IN std_logic;
+        output: OUT std_logic_vector (7 DOWNTO 0);
+        count : in std_logic);
+END random;
+
+ARCHITECTURE random_beh OF random IS
+  SIGNAL Currstate, Nextstate: std_logic_vector (7 DOWNTO 0);
+  SIGNAL feedback: std_logic;
+  signal new_number : std_logic_vector(3 downto 0);
+BEGIN
+  new_number <= Currstate(3 downto 0) when(count = '1') else (others=> '0');  
+  StateReg: PROCESS (Clk,Rst)
+  BEGIN
+    IF (Rst = '1') THEN
+      Currstate <= (0 => '1', OTHERS =>'0');
+    ELSIF (Clk = '1' AND Clk'EVENT) THEN
+      Currstate <= Nextstate;
+    END IF;
+  END PROCESS;
+  
+  
+  
+  
+  feedback <= Currstate(4) XOR Currstate(3) XOR Currstate(2) XOR Currstate(0);
+  Nextstate <= feedback & Currstate(7 DOWNTO 1);
+  output <= Currstate;
+    
+END random_beh;
