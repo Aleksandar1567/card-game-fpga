@@ -1,0 +1,3 @@
+
+
+vhdlan -xlrm "C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho"

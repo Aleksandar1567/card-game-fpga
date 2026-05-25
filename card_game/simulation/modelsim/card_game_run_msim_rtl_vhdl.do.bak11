@@ -1,0 +1,25 @@
+transcript on
+if ![file isdirectory card_game_iputf_libs] {
+	file mkdir card_game_iputf_libs
+}
+
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+###### Libraries for IPUTF cores 
+###### End libraries for IPUTF cores 
+###### MIF file copy and HDL compilation commands for IPUTF cores 
+
+
+vcom "C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho"
+
+vcom -93 -work work {C:/Users/aleks/Desktop/card_game/diff.vhd}
+vcom -93 -work work {C:/Users/aleks/Desktop/card_game/Logika.vhd}
+vcom -93 -work work {C:/Users/aleks/Desktop/card_game/vga_sync.vhd}
+vcom -93 -work work {C:/Users/aleks/Desktop/card_game/random.vhd}
+vcom -93 -work work {C:/Users/aleks/Desktop/card_game/card_game.vhd}
+vcom -93 -work work {C:/Users/aleks/Desktop/card_game/rom.vhd}
+

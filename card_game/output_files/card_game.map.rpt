@@ -1,0 +1,1329 @@
+Analysis & Synthesis report for card_game
+Sat Jan 14 15:42:09 2023
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Analysis & Synthesis IP Cores Summary
+ 11. State Machine - |card_game|Logika:log|state_reg
+ 12. State Machine - |card_game|diff:d3|state_reg
+ 13. State Machine - |card_game|diff:d2|state_reg
+ 14. State Machine - |card_game|diff:d1|state_reg
+ 15. Registers Removed During Synthesis
+ 16. Removed Registers Triggering Further Register Optimizations
+ 17. General Register Statistics
+ 18. Inverted Register Statistics
+ 19. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 20. Source assignments for rom:memory|altsyncram:altsyncram_component|altsyncram_ct14:auto_generated
+ 21. Parameter Settings for User Entity Instance: pll:vga_pll|pll_0002:pll_inst|altera_pll:altera_pll_i
+ 22. Parameter Settings for User Entity Instance: vga_sync:sync
+ 23. Parameter Settings for User Entity Instance: rom:memory|altsyncram:altsyncram_component
+ 24. altsyncram Parameter Settings by Entity Instance
+ 25. Port Connectivity Checks: "Logika:log"
+ 26. Port Connectivity Checks: "vga_sync:sync"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Jan 14 15:42:09 2023       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; card_game                                   ;
+; Top-level Entity Name           ; card_game                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 667                                         ;
+; Total pins                      ; 42                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 393,216                                     ;
+; Total DSP Blocks                ; 4                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 1                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; card_game          ; card_game          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; diff.vhd                         ; yes             ; User VHDL File                         ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/diff.vhd                       ;         ;
+; Logika.vhd                       ; yes             ; User VHDL File                         ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/Logika.vhd                     ;         ;
+; vga_sync.vhd                     ; yes             ; User VHDL File                         ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/vga_sync.vhd                   ;         ;
+; random.vhd                       ; yes             ; User VHDL File                         ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/random.vhd                     ;         ;
+; card_game.vhd                    ; yes             ; User VHDL File                         ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd                  ;         ;
+; rom.vhd                          ; yes             ; User Wizard-Generated File             ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/rom.vhd                        ;         ;
+; pll.vhd                          ; yes             ; User Wizard-Generated File             ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/pll.vhd                        ; pll     ;
+; pll/pll_0002.v                   ; yes             ; User Verilog HDL File                  ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/pll/pll_0002.v                 ; pll     ;
+; altera_pll.v                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v          ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_ct14.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/db/altsyncram_ct14.tdf         ;         ;
+; yu.mif                           ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/yu.mif                         ;         ;
+; db/decode_11a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/db/decode_11a.tdf              ;         ;
+; db/mux_3hb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/db/mux_3hb.tdf                 ;         ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                        ;
++---------------------------------------------+----------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                ;
++---------------------------------------------+----------------------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 617                                                                  ;
+;                                             ;                                                                      ;
+; Combinational ALUT usage for logic          ; 807                                                                  ;
+;     -- 7 input functions                    ; 11                                                                   ;
+;     -- 6 input functions                    ; 365                                                                  ;
+;     -- 5 input functions                    ; 101                                                                  ;
+;     -- 4 input functions                    ; 43                                                                   ;
+;     -- <=3 input functions                  ; 287                                                                  ;
+;                                             ;                                                                      ;
+; Dedicated logic registers                   ; 667                                                                  ;
+;                                             ;                                                                      ;
+; I/O pins                                    ; 42                                                                   ;
+; Total MLAB memory bits                      ; 0                                                                    ;
+; Total block memory bits                     ; 393216                                                               ;
+;                                             ;                                                                      ;
+; Total DSP Blocks                            ; 4                                                                    ;
+;                                             ;                                                                      ;
+; Total PLLs                                  ; 1                                                                    ;
+;     -- PLLs                                 ; 1                                                                    ;
+;                                             ;                                                                      ;
+; Maximum fan-out node                        ; pll:vga_pll|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
+; Maximum fan-out                             ; 717                                                                  ;
+; Total fan-out                               ; 6798                                                                 ;
+; Average fan-out                             ; 4.22                                                                 ;
++---------------------------------------------+----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                               ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                         ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |card_game                                ; 807 (252)           ; 667 (403)                 ; 393216            ; 4          ; 42   ; 0            ; |card_game                                                                                                  ; card_game       ; work         ;
+;    |Logika:log|                           ; 350 (350)           ; 199 (199)                 ; 0                 ; 0          ; 0    ; 0            ; |card_game|Logika:log                                                                                       ; Logika          ; work         ;
+;    |diff:d1|                              ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |card_game|diff:d1                                                                                          ; diff            ; work         ;
+;    |diff:d2|                              ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |card_game|diff:d2                                                                                          ; diff            ; work         ;
+;    |diff:d3|                              ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |card_game|diff:d3                                                                                          ; diff            ; work         ;
+;    |pll:vga_pll|                          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |card_game|pll:vga_pll                                                                                      ; pll             ; pll          ;
+;       |pll_0002:pll_inst|                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |card_game|pll:vga_pll|pll_0002:pll_inst                                                                    ; pll_0002        ; pll          ;
+;          |altera_pll:altera_pll_i|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |card_game|pll:vga_pll|pll_0002:pll_inst|altera_pll:altera_pll_i                                            ; altera_pll      ; work         ;
+;    |random:rand|                          ; 10 (10)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |card_game|random:rand                                                                                      ; random          ; work         ;
+;    |rom:memory|                           ; 4 (0)               ; 2 (0)                     ; 393216            ; 0          ; 0    ; 0            ; |card_game|rom:memory                                                                                       ; rom             ; work         ;
+;       |altsyncram:altsyncram_component|   ; 4 (0)               ; 2 (0)                     ; 393216            ; 0          ; 0    ; 0            ; |card_game|rom:memory|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;          |altsyncram_ct14:auto_generated| ; 4 (0)               ; 2 (2)                     ; 393216            ; 0          ; 0    ; 0            ; |card_game|rom:memory|altsyncram:altsyncram_component|altsyncram_ct14:auto_generated                        ; altsyncram_ct14 ; work         ;
+;             |decode_11a:rden_decode|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |card_game|rom:memory|altsyncram:altsyncram_component|altsyncram_ct14:auto_generated|decode_11a:rden_decode ; decode_11a      ; work         ;
+;    |vga_sync:sync|                        ; 185 (185)           ; 44 (44)                   ; 0                 ; 0          ; 0    ; 0            ; |card_game|vga_sync:sync                                                                                    ; vga_sync        ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                 ;
++--------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------+
+; Name                                                                                 ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF    ;
++--------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------+
+; rom:memory|altsyncram:altsyncram_component|altsyncram_ct14:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 32768        ; 12           ; --           ; --           ; 393216 ; yu.mif ;
++--------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary            ;
++-------------------------------------------+-------------+
+; Statistic                                 ; Number Used ;
++-------------------------------------------+-------------+
+; Independent 9x9                           ; 2           ;
+; Two Independent 18x18                     ; 2           ;
+; Total number of DSP blocks                ; 4           ;
+;                                           ;             ;
+; Fixed Point Unsigned Multiplier           ; 4           ;
+; Fixed Point Dedicated Pre-Adder           ; 1           ;
+; Fixed Point Dedicated Coefficient Storage ; 1           ;
++-------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                    ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance        ; IP Include File ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+; Altera ; ROM: 1-PORT  ; 18.1    ; N/A          ; N/A          ; |card_game|rom:memory  ; rom.vhd         ;
+; Altera ; altera_pll   ; 18.1    ; N/A          ; N/A          ; |card_game|pll:vga_pll ; pll.vhd         ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |card_game|Logika:log|state_reg                                                                                                                                                           ;
++--------------------------------+-----------------+------------------+------------------------+-----------------------+--------------------------------+--------------------------------+------------------+
+; Name                           ; state_reg.stEnd ; state_reg.st5sec ; state_reg.stSecondCard ; state_reg.stFirstCard ; state_reg.stUpdatePositionNext ; state_reg.stUpdatePositionPrev ; state_reg.stInit ;
++--------------------------------+-----------------+------------------+------------------------+-----------------------+--------------------------------+--------------------------------+------------------+
+; state_reg.stInit               ; 0               ; 0                ; 0                      ; 0                     ; 0                              ; 0                              ; 0                ;
+; state_reg.stUpdatePositionPrev ; 0               ; 0                ; 0                      ; 0                     ; 0                              ; 1                              ; 1                ;
+; state_reg.stUpdatePositionNext ; 0               ; 0                ; 0                      ; 0                     ; 1                              ; 0                              ; 1                ;
+; state_reg.stFirstCard          ; 0               ; 0                ; 0                      ; 1                     ; 0                              ; 0                              ; 1                ;
+; state_reg.stSecondCard         ; 0               ; 0                ; 1                      ; 0                     ; 0                              ; 0                              ; 1                ;
+; state_reg.st5sec               ; 0               ; 1                ; 0                      ; 0                     ; 0                              ; 0                              ; 1                ;
+; state_reg.stEnd                ; 1               ; 0                ; 0                      ; 0                     ; 0                              ; 0                              ; 1                ;
++--------------------------------+-----------------+------------------+------------------------+-----------------------+--------------------------------+--------------------------------+------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |card_game|diff:d3|state_reg              ;
++--------------+--------------+--------------+--------------+
+; Name         ; state_reg.s2 ; state_reg.s1 ; state_reg.s0 ;
++--------------+--------------+--------------+--------------+
+; state_reg.s0 ; 0            ; 0            ; 0            ;
+; state_reg.s1 ; 0            ; 1            ; 1            ;
+; state_reg.s2 ; 1            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |card_game|diff:d2|state_reg              ;
++--------------+--------------+--------------+--------------+
+; Name         ; state_reg.s2 ; state_reg.s1 ; state_reg.s0 ;
++--------------+--------------+--------------+--------------+
+; state_reg.s0 ; 0            ; 0            ; 0            ;
+; state_reg.s1 ; 0            ; 1            ; 1            ;
+; state_reg.s2 ; 1            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |card_game|diff:d1|state_reg              ;
++--------------+--------------+--------------+--------------+
+; Name         ; state_reg.s2 ; state_reg.s1 ; state_reg.s0 ;
++--------------+--------------+--------------+--------------+
+; state_reg.s0 ; 0            ; 0            ; 0            ;
+; state_reg.s1 ; 0            ; 1            ; 1            ;
+; state_reg.s2 ; 1            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; random:rand|temp                        ; Stuck at VCC due to stuck port data_in ;
+; random:rand|ready                       ; Stuck at VCC due to stuck port data_in ;
+; indicator[2..30]                        ; Merged with indicator[31]              ;
+; random:rand|counter[0..31]              ; Lost fanout                            ;
+; indicator[31]                           ; Stuck at GND due to stuck port data_in ;
+; diff:d3|state_reg.s0                    ; Lost fanout                            ;
+; diff:d2|state_reg.s0                    ; Lost fanout                            ;
+; diff:d1|state_reg.s0                    ; Lost fanout                            ;
+; random_color[0][19]                     ; Merged with random_color[0][16]        ;
+; random_color[0][20]                     ; Merged with random_color[0][16]        ;
+; random_color[0][21]                     ; Merged with random_color[0][16]        ;
+; random_color[0][22]                     ; Merged with random_color[0][16]        ;
+; random_color[1][19]                     ; Merged with random_color[1][16]        ;
+; random_color[1][20]                     ; Merged with random_color[1][16]        ;
+; random_color[1][21]                     ; Merged with random_color[1][16]        ;
+; random_color[1][22]                     ; Merged with random_color[1][16]        ;
+; random_color[2][19]                     ; Merged with random_color[2][16]        ;
+; random_color[2][20]                     ; Merged with random_color[2][16]        ;
+; random_color[2][21]                     ; Merged with random_color[2][16]        ;
+; random_color[2][22]                     ; Merged with random_color[2][16]        ;
+; random_color[3][19]                     ; Merged with random_color[3][16]        ;
+; random_color[3][20]                     ; Merged with random_color[3][16]        ;
+; random_color[3][21]                     ; Merged with random_color[3][16]        ;
+; random_color[3][22]                     ; Merged with random_color[3][16]        ;
+; random_color[4][19]                     ; Merged with random_color[4][16]        ;
+; random_color[4][20]                     ; Merged with random_color[4][16]        ;
+; random_color[4][21]                     ; Merged with random_color[4][16]        ;
+; random_color[4][22]                     ; Merged with random_color[4][16]        ;
+; random_color[5][19]                     ; Merged with random_color[5][16]        ;
+; random_color[5][20]                     ; Merged with random_color[5][16]        ;
+; random_color[5][21]                     ; Merged with random_color[5][16]        ;
+; random_color[5][22]                     ; Merged with random_color[5][16]        ;
+; random_color[6][19]                     ; Merged with random_color[6][16]        ;
+; random_color[6][20]                     ; Merged with random_color[6][16]        ;
+; random_color[6][21]                     ; Merged with random_color[6][16]        ;
+; random_color[6][22]                     ; Merged with random_color[6][16]        ;
+; random_color[7][19]                     ; Merged with random_color[7][16]        ;
+; random_color[7][20]                     ; Merged with random_color[7][16]        ;
+; random_color[7][21]                     ; Merged with random_color[7][16]        ;
+; random_color[7][22]                     ; Merged with random_color[7][16]        ;
+; random_color[8][19]                     ; Merged with random_color[8][16]        ;
+; random_color[8][20]                     ; Merged with random_color[8][16]        ;
+; random_color[8][21]                     ; Merged with random_color[8][16]        ;
+; random_color[8][22]                     ; Merged with random_color[8][16]        ;
+; random_color[9][19]                     ; Merged with random_color[9][16]        ;
+; random_color[9][20]                     ; Merged with random_color[9][16]        ;
+; random_color[9][21]                     ; Merged with random_color[9][16]        ;
+; random_color[9][22]                     ; Merged with random_color[9][16]        ;
+; random_color[10][19]                    ; Merged with random_color[10][16]       ;
+; random_color[10][20]                    ; Merged with random_color[10][16]       ;
+; random_color[10][21]                    ; Merged with random_color[10][16]       ;
+; random_color[10][22]                    ; Merged with random_color[10][16]       ;
+; random_color[11][19]                    ; Merged with random_color[11][16]       ;
+; random_color[11][20]                    ; Merged with random_color[11][16]       ;
+; random_color[11][21]                    ; Merged with random_color[11][16]       ;
+; random_color[11][22]                    ; Merged with random_color[11][16]       ;
+; random_color[12][19]                    ; Merged with random_color[12][16]       ;
+; random_color[12][20]                    ; Merged with random_color[12][16]       ;
+; random_color[12][21]                    ; Merged with random_color[12][16]       ;
+; random_color[12][22]                    ; Merged with random_color[12][16]       ;
+; random_color[13][19]                    ; Merged with random_color[13][16]       ;
+; random_color[13][20]                    ; Merged with random_color[13][16]       ;
+; random_color[13][21]                    ; Merged with random_color[13][16]       ;
+; random_color[13][22]                    ; Merged with random_color[13][16]       ;
+; random_color[14][19]                    ; Merged with random_color[14][16]       ;
+; random_color[14][20]                    ; Merged with random_color[14][16]       ;
+; random_color[14][21]                    ; Merged with random_color[14][16]       ;
+; random_color[14][22]                    ; Merged with random_color[14][16]       ;
+; random_color[15][19]                    ; Merged with random_color[15][16]       ;
+; random_color[15][20]                    ; Merged with random_color[15][16]       ;
+; random_color[15][21]                    ; Merged with random_color[15][16]       ;
+; random_color[15][22]                    ; Merged with random_color[15][16]       ;
+; random_color[16][19]                    ; Merged with random_color[16][16]       ;
+; random_color[16][20]                    ; Merged with random_color[16][16]       ;
+; random_color[16][21]                    ; Merged with random_color[16][16]       ;
+; random_color[16][22]                    ; Merged with random_color[16][16]       ;
+; random_color[17][19]                    ; Merged with random_color[17][16]       ;
+; random_color[17][20]                    ; Merged with random_color[17][16]       ;
+; random_color[17][21]                    ; Merged with random_color[17][16]       ;
+; random_color[17][22]                    ; Merged with random_color[17][16]       ;
+; random_color[18][19]                    ; Merged with random_color[18][16]       ;
+; random_color[18][20]                    ; Merged with random_color[18][16]       ;
+; random_color[18][21]                    ; Merged with random_color[18][16]       ;
+; random_color[18][22]                    ; Merged with random_color[18][16]       ;
+; random_color[19][19]                    ; Merged with random_color[19][16]       ;
+; random_color[19][20]                    ; Merged with random_color[19][16]       ;
+; random_color[19][21]                    ; Merged with random_color[19][16]       ;
+; random_color[19][22]                    ; Merged with random_color[19][16]       ;
+; random_color[20][19]                    ; Merged with random_color[20][16]       ;
+; random_color[20][20]                    ; Merged with random_color[20][16]       ;
+; random_color[20][21]                    ; Merged with random_color[20][16]       ;
+; random_color[20][22]                    ; Merged with random_color[20][16]       ;
+; random_color[21][19]                    ; Merged with random_color[21][16]       ;
+; random_color[21][20]                    ; Merged with random_color[21][16]       ;
+; random_color[21][21]                    ; Merged with random_color[21][16]       ;
+; random_color[21][22]                    ; Merged with random_color[21][16]       ;
+; random_color[22][19]                    ; Merged with random_color[22][16]       ;
+; random_color[22][20]                    ; Merged with random_color[22][16]       ;
+; random_color[22][21]                    ; Merged with random_color[22][16]       ;
+; random_color[22][22]                    ; Merged with random_color[22][16]       ;
+; random_color[23][19]                    ; Merged with random_color[23][16]       ;
+; random_color[23][20]                    ; Merged with random_color[23][16]       ;
+; random_color[23][21]                    ; Merged with random_color[23][16]       ;
+; random_color[23][22]                    ; Merged with random_color[23][16]       ;
+; random_color[0][13]                     ; Merged with random_color[0][10]        ;
+; random_color[1][13]                     ; Merged with random_color[1][10]        ;
+; random_color[2][13]                     ; Merged with random_color[2][10]        ;
+; random_color[3][13]                     ; Merged with random_color[3][10]        ;
+; random_color[4][13]                     ; Merged with random_color[4][10]        ;
+; random_color[5][13]                     ; Merged with random_color[5][10]        ;
+; random_color[6][13]                     ; Merged with random_color[6][10]        ;
+; random_color[7][13]                     ; Merged with random_color[7][10]        ;
+; random_color[8][13]                     ; Merged with random_color[8][10]        ;
+; random_color[9][13]                     ; Merged with random_color[9][10]        ;
+; random_color[10][13]                    ; Merged with random_color[10][10]       ;
+; random_color[11][13]                    ; Merged with random_color[11][10]       ;
+; random_color[12][13]                    ; Merged with random_color[12][10]       ;
+; random_color[13][13]                    ; Merged with random_color[13][10]       ;
+; random_color[14][13]                    ; Merged with random_color[14][10]       ;
+; random_color[15][13]                    ; Merged with random_color[15][10]       ;
+; random_color[16][13]                    ; Merged with random_color[16][10]       ;
+; random_color[17][13]                    ; Merged with random_color[17][10]       ;
+; random_color[18][13]                    ; Merged with random_color[18][10]       ;
+; random_color[19][13]                    ; Merged with random_color[19][10]       ;
+; random_color[20][13]                    ; Merged with random_color[20][10]       ;
+; random_color[21][13]                    ; Merged with random_color[21][10]       ;
+; random_color[22][13]                    ; Merged with random_color[22][10]       ;
+; random_color[23][13]                    ; Merged with random_color[23][10]       ;
+; random_color[20][14]                    ; Merged with random_color[20][12]       ;
+; random_color[21][14]                    ; Merged with random_color[21][12]       ;
+; random_color[22][14]                    ; Merged with random_color[22][12]       ;
+; random_color[23][14]                    ; Merged with random_color[23][12]       ;
+; random_color[0][14]                     ; Merged with random_color[0][12]        ;
+; random_color[1][14]                     ; Merged with random_color[1][12]        ;
+; random_color[2][14]                     ; Merged with random_color[2][12]        ;
+; random_color[3][14]                     ; Merged with random_color[3][12]        ;
+; random_color[4][14]                     ; Merged with random_color[4][12]        ;
+; random_color[5][14]                     ; Merged with random_color[5][12]        ;
+; random_color[6][14]                     ; Merged with random_color[6][12]        ;
+; random_color[7][14]                     ; Merged with random_color[7][12]        ;
+; random_color[8][14]                     ; Merged with random_color[8][12]        ;
+; random_color[9][14]                     ; Merged with random_color[9][12]        ;
+; random_color[10][14]                    ; Merged with random_color[10][12]       ;
+; random_color[11][14]                    ; Merged with random_color[11][12]       ;
+; random_color[12][14]                    ; Merged with random_color[12][12]       ;
+; random_color[13][14]                    ; Merged with random_color[13][12]       ;
+; random_color[14][14]                    ; Merged with random_color[14][12]       ;
+; random_color[15][14]                    ; Merged with random_color[15][12]       ;
+; random_color[16][14]                    ; Merged with random_color[16][12]       ;
+; random_color[17][14]                    ; Merged with random_color[17][12]       ;
+; random_color[18][14]                    ; Merged with random_color[18][12]       ;
+; random_color[19][14]                    ; Merged with random_color[19][12]       ;
+; random_color[0][2]                      ; Merged with random_color[0][0]         ;
+; random_color[0][3]                      ; Merged with random_color[0][0]         ;
+; random_color[0][5]                      ; Merged with random_color[0][0]         ;
+; random_color[1][2]                      ; Merged with random_color[1][0]         ;
+; random_color[1][3]                      ; Merged with random_color[1][0]         ;
+; random_color[1][5]                      ; Merged with random_color[1][0]         ;
+; random_color[2][2]                      ; Merged with random_color[2][0]         ;
+; random_color[2][3]                      ; Merged with random_color[2][0]         ;
+; random_color[2][5]                      ; Merged with random_color[2][0]         ;
+; random_color[3][2]                      ; Merged with random_color[3][0]         ;
+; random_color[3][3]                      ; Merged with random_color[3][0]         ;
+; random_color[3][5]                      ; Merged with random_color[3][0]         ;
+; random_color[4][2]                      ; Merged with random_color[4][0]         ;
+; random_color[4][3]                      ; Merged with random_color[4][0]         ;
+; random_color[4][5]                      ; Merged with random_color[4][0]         ;
+; random_color[5][2]                      ; Merged with random_color[5][0]         ;
+; random_color[5][3]                      ; Merged with random_color[5][0]         ;
+; random_color[5][5]                      ; Merged with random_color[5][0]         ;
+; random_color[6][2]                      ; Merged with random_color[6][0]         ;
+; random_color[6][3]                      ; Merged with random_color[6][0]         ;
+; random_color[6][5]                      ; Merged with random_color[6][0]         ;
+; random_color[7][2]                      ; Merged with random_color[7][0]         ;
+; random_color[7][3]                      ; Merged with random_color[7][0]         ;
+; random_color[7][5]                      ; Merged with random_color[7][0]         ;
+; random_color[8][2]                      ; Merged with random_color[8][0]         ;
+; random_color[8][3]                      ; Merged with random_color[8][0]         ;
+; random_color[8][5]                      ; Merged with random_color[8][0]         ;
+; random_color[9][2]                      ; Merged with random_color[9][0]         ;
+; random_color[9][3]                      ; Merged with random_color[9][0]         ;
+; random_color[9][5]                      ; Merged with random_color[9][0]         ;
+; random_color[10][2]                     ; Merged with random_color[10][0]        ;
+; random_color[10][3]                     ; Merged with random_color[10][0]        ;
+; random_color[10][5]                     ; Merged with random_color[10][0]        ;
+; random_color[11][2]                     ; Merged with random_color[11][0]        ;
+; random_color[11][3]                     ; Merged with random_color[11][0]        ;
+; random_color[11][5]                     ; Merged with random_color[11][0]        ;
+; random_color[12][2]                     ; Merged with random_color[12][0]        ;
+; random_color[12][3]                     ; Merged with random_color[12][0]        ;
+; random_color[12][5]                     ; Merged with random_color[12][0]        ;
+; random_color[13][2]                     ; Merged with random_color[13][0]        ;
+; random_color[13][3]                     ; Merged with random_color[13][0]        ;
+; random_color[13][5]                     ; Merged with random_color[13][0]        ;
+; random_color[14][2]                     ; Merged with random_color[14][0]        ;
+; random_color[14][3]                     ; Merged with random_color[14][0]        ;
+; random_color[14][5]                     ; Merged with random_color[14][0]        ;
+; random_color[15][2]                     ; Merged with random_color[15][0]        ;
+; random_color[15][3]                     ; Merged with random_color[15][0]        ;
+; random_color[15][5]                     ; Merged with random_color[15][0]        ;
+; random_color[16][2]                     ; Merged with random_color[16][0]        ;
+; random_color[16][3]                     ; Merged with random_color[16][0]        ;
+; random_color[16][5]                     ; Merged with random_color[16][0]        ;
+; random_color[17][2]                     ; Merged with random_color[17][0]        ;
+; random_color[17][3]                     ; Merged with random_color[17][0]        ;
+; random_color[17][5]                     ; Merged with random_color[17][0]        ;
+; random_color[18][2]                     ; Merged with random_color[18][0]        ;
+; random_color[18][3]                     ; Merged with random_color[18][0]        ;
+; random_color[18][5]                     ; Merged with random_color[18][0]        ;
+; random_color[19][2]                     ; Merged with random_color[19][0]        ;
+; random_color[19][3]                     ; Merged with random_color[19][0]        ;
+; random_color[19][5]                     ; Merged with random_color[19][0]        ;
+; random_color[20][2]                     ; Merged with random_color[20][0]        ;
+; random_color[20][3]                     ; Merged with random_color[20][0]        ;
+; random_color[20][5]                     ; Merged with random_color[20][0]        ;
+; random_color[21][2]                     ; Merged with random_color[21][0]        ;
+; random_color[21][3]                     ; Merged with random_color[21][0]        ;
+; random_color[21][5]                     ; Merged with random_color[21][0]        ;
+; random_color[22][2]                     ; Merged with random_color[22][0]        ;
+; random_color[22][3]                     ; Merged with random_color[22][0]        ;
+; random_color[22][5]                     ; Merged with random_color[22][0]        ;
+; random_color[23][2]                     ; Merged with random_color[23][0]        ;
+; random_color[23][3]                     ; Merged with random_color[23][0]        ;
+; random_color[23][5]                     ; Merged with random_color[23][0]        ;
+; random_color[20][6]                     ; Merged with random_color[20][4]        ;
+; random_color[21][6]                     ; Merged with random_color[21][4]        ;
+; random_color[22][6]                     ; Merged with random_color[22][4]        ;
+; random_color[23][6]                     ; Merged with random_color[23][4]        ;
+; random_color[0][6]                      ; Merged with random_color[0][4]         ;
+; random_color[1][6]                      ; Merged with random_color[1][4]         ;
+; random_color[2][6]                      ; Merged with random_color[2][4]         ;
+; random_color[3][6]                      ; Merged with random_color[3][4]         ;
+; random_color[4][6]                      ; Merged with random_color[4][4]         ;
+; random_color[5][6]                      ; Merged with random_color[5][4]         ;
+; random_color[6][6]                      ; Merged with random_color[6][4]         ;
+; random_color[7][6]                      ; Merged with random_color[7][4]         ;
+; random_color[8][6]                      ; Merged with random_color[8][4]         ;
+; random_color[9][6]                      ; Merged with random_color[9][4]         ;
+; random_color[10][6]                     ; Merged with random_color[10][4]        ;
+; random_color[11][6]                     ; Merged with random_color[11][4]        ;
+; random_color[12][6]                     ; Merged with random_color[12][4]        ;
+; random_color[13][6]                     ; Merged with random_color[13][4]        ;
+; random_color[14][6]                     ; Merged with random_color[14][4]        ;
+; random_color[15][6]                     ; Merged with random_color[15][4]        ;
+; random_color[16][6]                     ; Merged with random_color[16][4]        ;
+; random_color[17][6]                     ; Merged with random_color[17][4]        ;
+; random_color[18][6]                     ; Merged with random_color[18][4]        ;
+; random_color[19][6]                     ; Merged with random_color[19][4]        ;
+; Logika:log|card1[19..22]                ; Merged with Logika:log|card1[16]       ;
+; Logika:log|card1[14]                    ; Merged with Logika:log|card1[12]       ;
+; Logika:log|card1[13]                    ; Merged with Logika:log|card1[10]       ;
+; Logika:log|card1[6]                     ; Merged with Logika:log|card1[4]        ;
+; Logika:log|card1[2,3,5]                 ; Merged with Logika:log|card1[0]        ;
+; Logika:log|card2[19..22]                ; Merged with Logika:log|card2[16]       ;
+; Logika:log|card2[14]                    ; Merged with Logika:log|card2[12]       ;
+; Logika:log|card2[13]                    ; Merged with Logika:log|card2[10]       ;
+; Logika:log|card2[6]                     ; Merged with Logika:log|card2[4]        ;
+; Logika:log|card2[2,3,5]                 ; Merged with Logika:log|card2[0]        ;
+; Total Number of Removed Registers = 327 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                     ;
++------------------------+---------------------------+----------------------------------------------------------------------------+
+; Register name          ; Reason for Removal        ; Registers Removed due to This Register                                     ;
++------------------------+---------------------------+----------------------------------------------------------------------------+
+; random:rand|ready      ; Stuck at VCC              ; random:rand|counter[31], random:rand|counter[30], random:rand|counter[29], ;
+;                        ; due to stuck port data_in ; random:rand|counter[28], random:rand|counter[27], random:rand|counter[26], ;
+;                        ;                           ; random:rand|counter[25]                                                    ;
+; random:rand|counter[0] ; Lost Fanouts              ; random:rand|counter[2], random:rand|counter[1]                             ;
++------------------------+---------------------------+----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 667   ;
+; Number of registers using Synchronous Clear  ; 186   ;
+; Number of registers using Synchronous Load   ; 39    ;
+; Number of registers using Asynchronous Clear ; 237   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 592   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; vga_sync:sync|hsync                    ; 1       ;
+; vga_sync:sync|vsync                    ; 1       ;
+; random:rand|St0[0]                     ; 3       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |card_game|Logika:log|card1[16]              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |card_game|Logika:log|card1[12]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[23][17]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[22][4]               ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[21][8]               ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[20][10]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[19][12]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[18][8]               ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[17][11]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[16][23]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[15][15]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[14][21]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[13][23]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[12][23]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[11][1]               ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[10][23]              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[9][12]               ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[8][22]               ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[7][4]                ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[6][15]               ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[5][10]               ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[4][10]               ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[3][16]               ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[2][8]                ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[1][5]                ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|random_color[0][1]                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |card_game|Logika:log|timer[11]              ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |card_game|Logika:log|counter[30]            ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |card_game|random:rand|output[3]             ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|Logika:log|constant_upsidedown[6] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |card_game|random:rand|was_next              ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |card_game|Logika:log|upside_down_cards[9]   ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |card_game|Logika:log|card2[14]              ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |card_game|j[6]                              ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |card_game|m[0]                              ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |card_game|n[0]                              ;
+; 18:1               ; 5 bits    ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |card_game|Logika:log|position[1]            ;
+; 31:1               ; 15 bits   ; 300 LEs       ; 30 LEs               ; 270 LEs                ; Yes        ; |card_game|address[0]                        ;
+; 24:1               ; 25 bits   ; 400 LEs       ; 400 LEs              ; 0 LEs                  ; No         ; |card_game|Logika:log|Mux12                  ;
+; 28:1               ; 12 bits   ; 216 LEs       ; 216 LEs              ; 0 LEs                  ; No         ; |card_game|vga_sync:sync|Bout[0]             ;
+; 30:1               ; 8 bits    ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |card_game|vga_sync:sync|Gout[4]             ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |card_game|vga_sync:sync|Rout[6]             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Source assignments for rom:memory|altsyncram:altsyncram_component|altsyncram_ct14:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------+
+; Assignment                      ; Value              ; From ; To                                 ;
++---------------------------------+--------------------+------+------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                  ;
++---------------------------------+--------------------+------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pll:vga_pll|pll_0002:pll_inst|altera_pll:altera_pll_i ;
++--------------------------------------+------------------------+------------------------------------+
+; Parameter Name                       ; Value                  ; Type                               ;
++--------------------------------------+------------------------+------------------------------------+
+; reference_clock_frequency            ; 50.0 MHz               ; String                             ;
+; fractional_vco_multiplier            ; false                  ; String                             ;
+; pll_type                             ; General                ; String                             ;
+; pll_subtype                          ; General                ; String                             ;
+; number_of_clocks                     ; 1                      ; Signed Integer                     ;
+; operation_mode                       ; direct                 ; String                             ;
+; deserialization_factor               ; 4                      ; Signed Integer                     ;
+; data_rate                            ; 0                      ; Signed Integer                     ;
+; sim_additional_refclk_cycles_to_lock ; 0                      ; Signed Integer                     ;
+; output_clock_frequency0              ; 65.000000 MHz          ; String                             ;
+; phase_shift0                         ; 0 ps                   ; String                             ;
+; duty_cycle0                          ; 50                     ; Signed Integer                     ;
+; output_clock_frequency1              ; 0 MHz                  ; String                             ;
+; phase_shift1                         ; 0 ps                   ; String                             ;
+; duty_cycle1                          ; 50                     ; Signed Integer                     ;
+; output_clock_frequency2              ; 0 MHz                  ; String                             ;
+; phase_shift2                         ; 0 ps                   ; String                             ;
+; duty_cycle2                          ; 50                     ; Signed Integer                     ;
+; output_clock_frequency3              ; 0 MHz                  ; String                             ;
+; phase_shift3                         ; 0 ps                   ; String                             ;
+; duty_cycle3                          ; 50                     ; Signed Integer                     ;
+; output_clock_frequency4              ; 0 MHz                  ; String                             ;
+; phase_shift4                         ; 0 ps                   ; String                             ;
+; duty_cycle4                          ; 50                     ; Signed Integer                     ;
+; output_clock_frequency5              ; 0 MHz                  ; String                             ;
+; phase_shift5                         ; 0 ps                   ; String                             ;
+; duty_cycle5                          ; 50                     ; Signed Integer                     ;
+; output_clock_frequency6              ; 0 MHz                  ; String                             ;
+; phase_shift6                         ; 0 ps                   ; String                             ;
+; duty_cycle6                          ; 50                     ; Signed Integer                     ;
+; output_clock_frequency7              ; 0 MHz                  ; String                             ;
+; phase_shift7                         ; 0 ps                   ; String                             ;
+; duty_cycle7                          ; 50                     ; Signed Integer                     ;
+; output_clock_frequency8              ; 0 MHz                  ; String                             ;
+; phase_shift8                         ; 0 ps                   ; String                             ;
+; duty_cycle8                          ; 50                     ; Signed Integer                     ;
+; output_clock_frequency9              ; 0 MHz                  ; String                             ;
+; phase_shift9                         ; 0 ps                   ; String                             ;
+; duty_cycle9                          ; 50                     ; Signed Integer                     ;
+; output_clock_frequency10             ; 0 MHz                  ; String                             ;
+; phase_shift10                        ; 0 ps                   ; String                             ;
+; duty_cycle10                         ; 50                     ; Signed Integer                     ;
+; output_clock_frequency11             ; 0 MHz                  ; String                             ;
+; phase_shift11                        ; 0 ps                   ; String                             ;
+; duty_cycle11                         ; 50                     ; Signed Integer                     ;
+; output_clock_frequency12             ; 0 MHz                  ; String                             ;
+; phase_shift12                        ; 0 ps                   ; String                             ;
+; duty_cycle12                         ; 50                     ; Signed Integer                     ;
+; output_clock_frequency13             ; 0 MHz                  ; String                             ;
+; phase_shift13                        ; 0 ps                   ; String                             ;
+; duty_cycle13                         ; 50                     ; Signed Integer                     ;
+; output_clock_frequency14             ; 0 MHz                  ; String                             ;
+; phase_shift14                        ; 0 ps                   ; String                             ;
+; duty_cycle14                         ; 50                     ; Signed Integer                     ;
+; output_clock_frequency15             ; 0 MHz                  ; String                             ;
+; phase_shift15                        ; 0 ps                   ; String                             ;
+; duty_cycle15                         ; 50                     ; Signed Integer                     ;
+; output_clock_frequency16             ; 0 MHz                  ; String                             ;
+; phase_shift16                        ; 0 ps                   ; String                             ;
+; duty_cycle16                         ; 50                     ; Signed Integer                     ;
+; output_clock_frequency17             ; 0 MHz                  ; String                             ;
+; phase_shift17                        ; 0 ps                   ; String                             ;
+; duty_cycle17                         ; 50                     ; Signed Integer                     ;
+; clock_name_0                         ;                        ; String                             ;
+; clock_name_1                         ;                        ; String                             ;
+; clock_name_2                         ;                        ; String                             ;
+; clock_name_3                         ;                        ; String                             ;
+; clock_name_4                         ;                        ; String                             ;
+; clock_name_5                         ;                        ; String                             ;
+; clock_name_6                         ;                        ; String                             ;
+; clock_name_7                         ;                        ; String                             ;
+; clock_name_8                         ;                        ; String                             ;
+; clock_name_global_0                  ; false                  ; String                             ;
+; clock_name_global_1                  ; false                  ; String                             ;
+; clock_name_global_2                  ; false                  ; String                             ;
+; clock_name_global_3                  ; false                  ; String                             ;
+; clock_name_global_4                  ; false                  ; String                             ;
+; clock_name_global_5                  ; false                  ; String                             ;
+; clock_name_global_6                  ; false                  ; String                             ;
+; clock_name_global_7                  ; false                  ; String                             ;
+; clock_name_global_8                  ; false                  ; String                             ;
+; m_cnt_hi_div                         ; 1                      ; Signed Integer                     ;
+; m_cnt_lo_div                         ; 1                      ; Signed Integer                     ;
+; m_cnt_bypass_en                      ; false                  ; String                             ;
+; m_cnt_odd_div_duty_en                ; false                  ; String                             ;
+; n_cnt_hi_div                         ; 1                      ; Signed Integer                     ;
+; n_cnt_lo_div                         ; 1                      ; Signed Integer                     ;
+; n_cnt_bypass_en                      ; false                  ; String                             ;
+; n_cnt_odd_div_duty_en                ; false                  ; String                             ;
+; c_cnt_hi_div0                        ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div0                        ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en0                     ; false                  ; String                             ;
+; c_cnt_in_src0                        ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en0               ; false                  ; String                             ;
+; c_cnt_prst0                          ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst0                   ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div1                        ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div1                        ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en1                     ; false                  ; String                             ;
+; c_cnt_in_src1                        ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en1               ; false                  ; String                             ;
+; c_cnt_prst1                          ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst1                   ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div2                        ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div2                        ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en2                     ; false                  ; String                             ;
+; c_cnt_in_src2                        ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en2               ; false                  ; String                             ;
+; c_cnt_prst2                          ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst2                   ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div3                        ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div3                        ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en3                     ; false                  ; String                             ;
+; c_cnt_in_src3                        ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en3               ; false                  ; String                             ;
+; c_cnt_prst3                          ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst3                   ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div4                        ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div4                        ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en4                     ; false                  ; String                             ;
+; c_cnt_in_src4                        ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en4               ; false                  ; String                             ;
+; c_cnt_prst4                          ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst4                   ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div5                        ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div5                        ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en5                     ; false                  ; String                             ;
+; c_cnt_in_src5                        ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en5               ; false                  ; String                             ;
+; c_cnt_prst5                          ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst5                   ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div6                        ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div6                        ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en6                     ; false                  ; String                             ;
+; c_cnt_in_src6                        ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en6               ; false                  ; String                             ;
+; c_cnt_prst6                          ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst6                   ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div7                        ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div7                        ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en7                     ; false                  ; String                             ;
+; c_cnt_in_src7                        ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en7               ; false                  ; String                             ;
+; c_cnt_prst7                          ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst7                   ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div8                        ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div8                        ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en8                     ; false                  ; String                             ;
+; c_cnt_in_src8                        ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en8               ; false                  ; String                             ;
+; c_cnt_prst8                          ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst8                   ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div9                        ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div9                        ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en9                     ; false                  ; String                             ;
+; c_cnt_in_src9                        ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en9               ; false                  ; String                             ;
+; c_cnt_prst9                          ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst9                   ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div10                       ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div10                       ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en10                    ; false                  ; String                             ;
+; c_cnt_in_src10                       ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en10              ; false                  ; String                             ;
+; c_cnt_prst10                         ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst10                  ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div11                       ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div11                       ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en11                    ; false                  ; String                             ;
+; c_cnt_in_src11                       ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en11              ; false                  ; String                             ;
+; c_cnt_prst11                         ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst11                  ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div12                       ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div12                       ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en12                    ; false                  ; String                             ;
+; c_cnt_in_src12                       ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en12              ; false                  ; String                             ;
+; c_cnt_prst12                         ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst12                  ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div13                       ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div13                       ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en13                    ; false                  ; String                             ;
+; c_cnt_in_src13                       ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en13              ; false                  ; String                             ;
+; c_cnt_prst13                         ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst13                  ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div14                       ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div14                       ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en14                    ; false                  ; String                             ;
+; c_cnt_in_src14                       ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en14              ; false                  ; String                             ;
+; c_cnt_prst14                         ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst14                  ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div15                       ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div15                       ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en15                    ; false                  ; String                             ;
+; c_cnt_in_src15                       ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en15              ; false                  ; String                             ;
+; c_cnt_prst15                         ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst15                  ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div16                       ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div16                       ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en16                    ; false                  ; String                             ;
+; c_cnt_in_src16                       ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en16              ; false                  ; String                             ;
+; c_cnt_prst16                         ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst16                  ; 0                      ; Signed Integer                     ;
+; c_cnt_hi_div17                       ; 1                      ; Signed Integer                     ;
+; c_cnt_lo_div17                       ; 1                      ; Signed Integer                     ;
+; c_cnt_bypass_en17                    ; false                  ; String                             ;
+; c_cnt_in_src17                       ; ph_mux_clk             ; String                             ;
+; c_cnt_odd_div_duty_en17              ; false                  ; String                             ;
+; c_cnt_prst17                         ; 1                      ; Signed Integer                     ;
+; c_cnt_ph_mux_prst17                  ; 0                      ; Signed Integer                     ;
+; pll_vco_div                          ; 1                      ; Signed Integer                     ;
+; pll_slf_rst                          ; false                  ; String                             ;
+; pll_bw_sel                           ; low                    ; String                             ;
+; pll_output_clk_frequency             ; 0 MHz                  ; String                             ;
+; pll_cp_current                       ; 0                      ; Signed Integer                     ;
+; pll_bwctrl                           ; 0                      ; Signed Integer                     ;
+; pll_fractional_division              ; 1                      ; Signed Integer                     ;
+; pll_fractional_cout                  ; 24                     ; Signed Integer                     ;
+; pll_dsm_out_sel                      ; 1st_order              ; String                             ;
+; mimic_fbclk_type                     ; gclk                   ; String                             ;
+; pll_fbclk_mux_1                      ; glb                    ; String                             ;
+; pll_fbclk_mux_2                      ; fb_1                   ; String                             ;
+; pll_m_cnt_in_src                     ; ph_mux_clk             ; String                             ;
+; pll_vcoph_div                        ; 1                      ; Signed Integer                     ;
+; refclk1_frequency                    ; 0 MHz                  ; String                             ;
+; pll_clkin_0_src                      ; clk_0                  ; String                             ;
+; pll_clkin_1_src                      ; clk_0                  ; String                             ;
+; pll_clk_loss_sw_en                   ; false                  ; String                             ;
+; pll_auto_clk_sw_en                   ; false                  ; String                             ;
+; pll_manu_clk_sw_en                   ; false                  ; String                             ;
+; pll_clk_sw_dly                       ; 0                      ; Signed Integer                     ;
+; pll_extclk_0_cnt_src                 ; pll_extclk_cnt_src_vss ; String                             ;
+; pll_extclk_1_cnt_src                 ; pll_extclk_cnt_src_vss ; String                             ;
++--------------------------------------+------------------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_sync:sync ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; h_sync         ; 136   ; Signed Integer                    ;
+; h_bp           ; 160   ; Signed Integer                    ;
+; h_fp           ; 24    ; Signed Integer                    ;
+; h_display      ; 1024  ; Signed Integer                    ;
+; v_sync         ; 6     ; Signed Integer                    ;
+; v_bp           ; 29    ; Signed Integer                    ;
+; v_fp           ; 3     ; Signed Integer                    ;
+; v_display      ; 768   ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom:memory|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------+
+; Parameter Name                     ; Value                ; Type                        ;
++------------------------------------+----------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                     ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                     ;
+; WIDTH_A                            ; 12                   ; Signed Integer              ;
+; WIDTHAD_A                          ; 15                   ; Signed Integer              ;
+; NUMWORDS_A                         ; 32768                ; Signed Integer              ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WIDTH_B                            ; 1                    ; Signed Integer              ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer              ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer              ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer              ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer              ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                     ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer              ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; INIT_FILE                          ; yu.mif               ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer              ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer              ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_ct14      ; Untyped                     ;
++------------------------------------+----------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                       ;
++-------------------------------------------+--------------------------------------------+
+; Name                                      ; Value                                      ;
++-------------------------------------------+--------------------------------------------+
+; Number of entity instances                ; 1                                          ;
+; Entity Instance                           ; rom:memory|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                        ;
+;     -- WIDTH_A                            ; 12                                         ;
+;     -- NUMWORDS_A                         ; 32768                                      ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                               ;
+;     -- WIDTH_B                            ; 1                                          ;
+;     -- NUMWORDS_B                         ; 0                                          ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                     ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                               ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                       ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ;
++-------------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logika:log"                                                                                 ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; finish_final ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_sync:sync"                                                                          ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; ref_tick ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 667                         ;
+;     CLR               ; 30                          ;
+;     CLR SCLR          ; 43                          ;
+;     ENA               ; 374                         ;
+;     ENA CLR           ; 75                          ;
+;     ENA CLR SCLR      ; 74                          ;
+;     ENA CLR SCLR SLD  ; 15                          ;
+;     ENA SCLR          ; 30                          ;
+;     ENA SCLR SLD      ; 24                          ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 819                         ;
+;     arith             ; 203                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 200                         ;
+;         2 data inputs ; 2                           ;
+;     extend            ; 11                          ;
+;         7 data inputs ; 11                          ;
+;     normal            ; 605                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 53                          ;
+;         3 data inputs ; 29                          ;
+;         4 data inputs ; 43                          ;
+;         5 data inputs ; 101                         ;
+;         6 data inputs ; 365                         ;
+; arriav_mac            ; 4                           ;
+; boundary_port         ; 42                          ;
+; generic_pll           ; 1                           ;
+; stratixv_ram_block    ; 48                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.22                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat Jan 14 15:41:54 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off card_game -c card_game
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file diff.vhd
+    Info (12022): Found design unit 1: diff-behav File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/diff.vhd Line: 14
+    Info (12023): Found entity 1: diff File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/diff.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file logika.vhd
+    Info (12022): Found design unit 1: Logika-Behavioral File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/Logika.vhd Line: 84
+    Info (12023): Found entity 1: Logika File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/Logika.vhd Line: 41
+Info (12021): Found 2 design units, including 1 entities, in source file vga_sync.vhd
+    Info (12022): Found design unit 1: vga_sync-behavioral File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/vga_sync.vhd Line: 32
+    Info (12023): Found entity 1: vga_sync File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/vga_sync.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file random.vhd
+    Info (12022): Found design unit 1: random-behavioral File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/random.vhd Line: 55
+    Info (12023): Found entity 1: random File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/random.vhd Line: 41
+Info (12021): Found 2 design units, including 1 entities, in source file card_game.vhd
+    Info (12022): Found design unit 1: card_game-rtl File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 62
+    Info (12023): Found entity 1: card_game File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 45
+Info (12021): Found 2 design units, including 1 entities, in source file rom.vhd
+    Info (12022): Found design unit 1: rom-SYN File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/rom.vhd Line: 52
+    Info (12023): Found entity 1: rom File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/rom.vhd Line: 42
+Info (12021): Found 2 design units, including 1 entities, in source file pll.vhd
+    Info (12022): Found design unit 1: pll-rtl File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/pll.vhd Line: 19
+    Info (12023): Found entity 1: pll File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/pll.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file pll/pll_0002.v
+    Info (12023): Found entity 1: pll_0002 File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/pll/pll_0002.v Line: 2
+Info (12127): Elaborating entity "card_game" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at card_game.vhd(253): object "finish" assigned a value but never read File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 253
+Info (12128): Elaborating entity "pll" for hierarchy "pll:vga_pll" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 624
+Info (12128): Elaborating entity "pll_0002" for hierarchy "pll:vga_pll|pll_0002:pll_inst" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/pll.vhd Line: 31
+Info (12128): Elaborating entity "altera_pll" for hierarchy "pll:vga_pll|pll_0002:pll_inst|altera_pll:altera_pll_i" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/pll/pll_0002.v Line: 85
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
+Info (12130): Elaborated megafunction instantiation "pll:vga_pll|pll_0002:pll_inst|altera_pll:altera_pll_i" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/pll/pll_0002.v Line: 85
+Info (12133): Instantiated megafunction "pll:vga_pll|pll_0002:pll_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/pll/pll_0002.v Line: 85
+    Info (12134): Parameter "fractional_vco_multiplier" = "false"
+    Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
+    Info (12134): Parameter "operation_mode" = "direct"
+    Info (12134): Parameter "number_of_clocks" = "1"
+    Info (12134): Parameter "output_clock_frequency0" = "65.000000 MHz"
+    Info (12134): Parameter "phase_shift0" = "0 ps"
+    Info (12134): Parameter "duty_cycle0" = "50"
+    Info (12134): Parameter "output_clock_frequency1" = "0 MHz"
+    Info (12134): Parameter "phase_shift1" = "0 ps"
+    Info (12134): Parameter "duty_cycle1" = "50"
+    Info (12134): Parameter "output_clock_frequency2" = "0 MHz"
+    Info (12134): Parameter "phase_shift2" = "0 ps"
+    Info (12134): Parameter "duty_cycle2" = "50"
+    Info (12134): Parameter "output_clock_frequency3" = "0 MHz"
+    Info (12134): Parameter "phase_shift3" = "0 ps"
+    Info (12134): Parameter "duty_cycle3" = "50"
+    Info (12134): Parameter "output_clock_frequency4" = "0 MHz"
+    Info (12134): Parameter "phase_shift4" = "0 ps"
+    Info (12134): Parameter "duty_cycle4" = "50"
+    Info (12134): Parameter "output_clock_frequency5" = "0 MHz"
+    Info (12134): Parameter "phase_shift5" = "0 ps"
+    Info (12134): Parameter "duty_cycle5" = "50"
+    Info (12134): Parameter "output_clock_frequency6" = "0 MHz"
+    Info (12134): Parameter "phase_shift6" = "0 ps"
+    Info (12134): Parameter "duty_cycle6" = "50"
+    Info (12134): Parameter "output_clock_frequency7" = "0 MHz"
+    Info (12134): Parameter "phase_shift7" = "0 ps"
+    Info (12134): Parameter "duty_cycle7" = "50"
+    Info (12134): Parameter "output_clock_frequency8" = "0 MHz"
+    Info (12134): Parameter "phase_shift8" = "0 ps"
+    Info (12134): Parameter "duty_cycle8" = "50"
+    Info (12134): Parameter "output_clock_frequency9" = "0 MHz"
+    Info (12134): Parameter "phase_shift9" = "0 ps"
+    Info (12134): Parameter "duty_cycle9" = "50"
+    Info (12134): Parameter "output_clock_frequency10" = "0 MHz"
+    Info (12134): Parameter "phase_shift10" = "0 ps"
+    Info (12134): Parameter "duty_cycle10" = "50"
+    Info (12134): Parameter "output_clock_frequency11" = "0 MHz"
+    Info (12134): Parameter "phase_shift11" = "0 ps"
+    Info (12134): Parameter "duty_cycle11" = "50"
+    Info (12134): Parameter "output_clock_frequency12" = "0 MHz"
+    Info (12134): Parameter "phase_shift12" = "0 ps"
+    Info (12134): Parameter "duty_cycle12" = "50"
+    Info (12134): Parameter "output_clock_frequency13" = "0 MHz"
+    Info (12134): Parameter "phase_shift13" = "0 ps"
+    Info (12134): Parameter "duty_cycle13" = "50"
+    Info (12134): Parameter "output_clock_frequency14" = "0 MHz"
+    Info (12134): Parameter "phase_shift14" = "0 ps"
+    Info (12134): Parameter "duty_cycle14" = "50"
+    Info (12134): Parameter "output_clock_frequency15" = "0 MHz"
+    Info (12134): Parameter "phase_shift15" = "0 ps"
+    Info (12134): Parameter "duty_cycle15" = "50"
+    Info (12134): Parameter "output_clock_frequency16" = "0 MHz"
+    Info (12134): Parameter "phase_shift16" = "0 ps"
+    Info (12134): Parameter "duty_cycle16" = "50"
+    Info (12134): Parameter "output_clock_frequency17" = "0 MHz"
+    Info (12134): Parameter "phase_shift17" = "0 ps"
+    Info (12134): Parameter "duty_cycle17" = "50"
+    Info (12134): Parameter "pll_type" = "General"
+    Info (12134): Parameter "pll_subtype" = "General"
+Info (12128): Elaborating entity "vga_sync" for hierarchy "vga_sync:sync" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 626
+Info (12128): Elaborating entity "rom" for hierarchy "rom:memory" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 628
+Info (12128): Elaborating entity "altsyncram" for hierarchy "rom:memory|altsyncram:altsyncram_component" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/rom.vhd Line: 59
+Info (12130): Elaborated megafunction instantiation "rom:memory|altsyncram:altsyncram_component" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/rom.vhd Line: 59
+Info (12133): Instantiated megafunction "rom:memory|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/rom.vhd Line: 59
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "yu.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "32768"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "12"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "15"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ct14.tdf
+    Info (12023): Found entity 1: altsyncram_ct14 File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/db/altsyncram_ct14.tdf Line: 31
+Info (12128): Elaborating entity "altsyncram_ct14" for hierarchy "rom:memory|altsyncram:altsyncram_component|altsyncram_ct14:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_11a.tdf
+    Info (12023): Found entity 1: decode_11a File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/db/decode_11a.tdf Line: 22
+Info (12128): Elaborating entity "decode_11a" for hierarchy "rom:memory|altsyncram:altsyncram_component|altsyncram_ct14:auto_generated|decode_11a:rden_decode" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/db/altsyncram_ct14.tdf Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3hb.tdf
+    Info (12023): Found entity 1: mux_3hb File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/db/mux_3hb.tdf Line: 22
+Info (12128): Elaborating entity "mux_3hb" for hierarchy "rom:memory|altsyncram:altsyncram_component|altsyncram_ct14:auto_generated|mux_3hb:mux2" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/db/altsyncram_ct14.tdf Line: 40
+Info (12128): Elaborating entity "random" for hierarchy "random:rand" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 630
+Info (12128): Elaborating entity "diff" for hierarchy "diff:d1" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 632
+Info (12128): Elaborating entity "Logika" for hierarchy "Logika:log" File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 638
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "initial_color" is uninferred due to inappropriate RAM size File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 200
+Warning (113028): 8 out of 32 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/db/card_game.ram0_card_game_985c75fe.hdl.mif Line: 1
+    Warning (113027): Addresses ranging from 24 to 31 are not initialized File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/db/card_game.ram0_card_game_985c75fe.hdl.mif Line: 1
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_BLANK_N" is stuck at VCC File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 53
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: C:/Users/aleks/Desktop/UPV/PROJEKAT/card_game/card_game.vhd Line: 53
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 35 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1346 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 37 output pins
+    Info (21061): Implemented 1251 logic cells
+    Info (21064): Implemented 48 RAM segments
+    Info (21065): Implemented 1 PLLs
+    Info (21062): Implemented 4 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4906 megabytes
+    Info: Processing ended: Sat Jan 14 15:42:09 2023
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:23
+
+

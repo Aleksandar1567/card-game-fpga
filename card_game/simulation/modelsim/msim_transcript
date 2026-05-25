@@ -1,0 +1,609 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do card_game_run_msim_rtl_vhdl.do
+# if ![file isdirectory card_game_iputf_libs] {
+# 	file mkdir card_game_iputf_libs
+# }
+# 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+###### Libraries for IPUTF cores 
+###### End libraries for IPUTF cores 
+###### MIF file copy and HDL compilation commands for IPUTF cores 
+# 
+# 
+# vcom "C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho"
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:50:42 on Dec 20,2022
+# vcom -reportprogress 300 C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_lnsim_components
+# -- Compiling entity pll
+# -- Compiling architecture RTL of pll
+# End time: 13:50:42 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {C:/Users/aleks/Desktop/card_game/diff.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:50:42 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/diff.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity diff
+# -- Compiling architecture behav of diff
+# End time: 13:50:42 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/aleks/Desktop/card_game/Logika.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:50:42 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/Logika.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Logika
+# -- Compiling architecture Behavioral of Logika
+# End time: 13:50:42 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/aleks/Desktop/card_game/vga_sync.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:50:42 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/vga_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity vga_sync
+# -- Compiling architecture behavioral of vga_sync
+# End time: 13:50:42 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/aleks/Desktop/card_game/random.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:50:42 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/random.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity random
+# -- Compiling architecture behavioral of random
+# End time: 13:50:42 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/aleks/Desktop/card_game/card_game.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:50:42 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/card_game.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity card_game
+# -- Compiling architecture rtl of card_game
+# End time: 13:50:42 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/aleks/Desktop/card_game/rom.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:50:42 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/rom.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity rom
+# -- Compiling architecture SYN of rom
+# End time: 13:50:42 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:51:31 on Dec 20,2022
+# vcom -reportprogress 300 -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity card_game_vhd_tst
+# -- Compiling architecture card_game_arch of card_game_vhd_tst
+# End time: 13:51:31 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.card_game_vhd_tst
+# vsim work.card_game_vhd_tst 
+# Start time: 13:51:44 on Dec 20,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.card_game_vhd_tst(card_game_arch)
+# Loading ieee.numeric_std(body)
+# Loading work.card_game(rtl)
+# Loading altera_lnsim.altera_lnsim_components
+# Loading work.pll(rtl)
+# Loading sv_std.std
+# Loading altera_lnsim.altera_lnsim_functions
+# Loading altera_lnsim.altera_pll
+# Loading altera_lnsim.dps_extra_kick
+# Loading altera_lnsim.dprio_init
+# Loading altera_lnsim.altera_generic_pll_functions
+# Loading altera_lnsim.generic_pll
+# Loading work.vga_sync(behavioral)
+# Loading altera_mf.altera_mf_components
+# Loading work.rom(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.random(behavioral)
+# Loading work.diff(behav)
+# Loading work.logika(behavioral)
+# ** Warning: Design size of 11967 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+add wave -position end  sim:/card_game_vhd_tst/next_card_in
+add wave -position end  sim:/card_game_vhd_tst/previous_card_in
+add wave -position end  sim:/card_game_vhd_tst/select_card_in
+add wave -position end  sim:/card_game_vhd_tst/reset
+add wave -position end  sim:/card_game_vhd_tst/VGA_HS
+add wave -position end  sim:/card_game_vhd_tst/VGA_VS
+add wave -position end  sim:/card_game_vhd_tst/led
+add wave -position end  sim:/card_game_vhd_tst/i1/initial_color
+add wave -position end  sim:/card_game_vhd_tst/i1/random_color
+add wave -position end  sim:/card_game_vhd_tst/i1/log/counter_led
+add wave -position end  sim:/card_game_vhd_tst/i1/log/timer_led
+add wave -position end  sim:/card_game_vhd_tst/i1/log/state_reg
+add wave -position end  sim:/card_game_vhd_tst/i1/log/next_state
+run
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 65 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 7692.307692
+# Info: output_clock_low_period = 7692.307692
+restart
+run
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 65 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 7692.307692
+# Info: output_clock_low_period = 7692.307692
+vcom -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:57:25 on Dec 20,2022
+# vcom -reportprogress 300 -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity card_game_vhd_tst
+# -- Compiling architecture card_game_arch of card_game_vhd_tst
+# End time: 13:57:25 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# Loading work.card_game_vhd_tst(card_game_arch)
+run
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 65 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 7692.307692
+# Info: output_clock_low_period = 7692.307692
+add wave -position end  sim:/card_game_vhd_tst/i1/ready
+add wave -position end  sim:/card_game_vhd_tst/i1/log/next_positon
+add wave -position end  sim:/card_game_vhd_tst/i1/log/previous_position
+add wave -position end  sim:/card_game_vhd_tst/i1/log/select_position
+restart
+run
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 65 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 7692.307692
+# Info: output_clock_low_period = 7692.307692
+vcom -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:03:04 on Dec 20,2022
+# vcom -reportprogress 300 -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity card_game_vhd_tst
+# -- Compiling architecture card_game_arch of card_game_vhd_tst
+# End time: 14:03:04 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:03:18 on Dec 20,2022
+# vcom -reportprogress 300 -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity card_game_vhd_tst
+# -- Compiling architecture card_game_arch of card_game_vhd_tst
+# End time: 14:03:18 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# Loading work.card_game_vhd_tst(card_game_arch)
+run
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 65 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 7692.307692
+# Info: output_clock_low_period = 7692.307692
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/card_game.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:10:49 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/card_game.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity card_game
+# -- Compiling architecture rtl of card_game
+# End time: 14:10:50 on Dec 20,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:10:51 on Dec 20,2022
+# vcom -reportprogress 300 -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity card_game_vhd_tst
+# -- Compiling architecture card_game_arch of card_game_vhd_tst
+# End time: 14:10:51 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# Loading work.card_game_vhd_tst(card_game_arch)
+# Loading work.card_game(rtl)
+restart
+run
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 65 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 7692.307692
+# Info: output_clock_low_period = 7692.307692
+add wave -position end  sim:/card_game_vhd_tst/i1/pom1
+add wave -position end  sim:/card_game_vhd_tst/i1/pom2
+add wave -position end  sim:/card_game_vhd_tst/i1/pom3
+add wave -position end  sim:/card_game_vhd_tst/i1/next_card
+add wave -position end  sim:/card_game_vhd_tst/i1/previous_card
+add wave -position end  sim:/card_game_vhd_tst/i1/select_card
+restart
+run
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 65 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 7692.307692
+# Info: output_clock_low_period = 7692.307692
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/card_game.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:20:48 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/card_game.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity card_game
+# -- Compiling architecture rtl of card_game
+# End time: 14:20:48 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:20:50 on Dec 20,2022
+# vcom -reportprogress 300 -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity card_game_vhd_tst
+# -- Compiling architecture card_game_arch of card_game_vhd_tst
+# End time: 14:20:50 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/diff.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:20:51 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/diff.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity diff
+# -- Compiling architecture behav of diff
+# End time: 14:20:51 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/Logika.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:20:52 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/Logika.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Logika
+# -- Compiling architecture Behavioral of Logika
+# End time: 14:20:53 on Dec 20,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:20:54 on Dec 20,2022
+# vcom -reportprogress 300 C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_lnsim_components
+# -- Compiling entity pll
+# -- Compiling architecture RTL of pll
+# End time: 14:20:54 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/random.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:20:55 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/random.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity random
+# -- Compiling architecture behavioral of random
+# End time: 14:20:55 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/rom.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:20:57 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/rom.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity rom
+# -- Compiling architecture SYN of rom
+# End time: 14:20:57 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/vga_sync.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:20:58 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/vga_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity vga_sync
+# -- Compiling architecture behavioral of vga_sync
+# End time: 14:20:58 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# Loading work.card_game_vhd_tst(card_game_arch)
+# Loading work.card_game(rtl)
+# Loading work.pll(rtl)
+# Loading work.vga_sync(behavioral)
+# Loading work.rom(syn)
+# Loading work.random(behavioral)
+# Loading work.diff(behav)
+# Loading work.logika(behavioral)
+run
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 65 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 7692.307692
+# Info: output_clock_low_period = 7692.307692
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/card_game.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:26:16 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/card_game.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity card_game
+# -- Compiling architecture rtl of card_game
+# End time: 14:26:16 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:26:18 on Dec 20,2022
+# vcom -reportprogress 300 -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity card_game_vhd_tst
+# -- Compiling architecture card_game_arch of card_game_vhd_tst
+# End time: 14:26:18 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+vcom -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:30:08 on Dec 20,2022
+# vcom -reportprogress 300 -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity card_game_vhd_tst
+# -- Compiling architecture card_game_arch of card_game_vhd_tst
+# End time: 14:30:08 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/card_game.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:30:09 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/card_game.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity card_game
+# -- Compiling architecture rtl of card_game
+# End time: 14:30:09 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:30:52 on Dec 20,2022
+# vcom -reportprogress 300 -work work C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity card_game_vhd_tst
+# -- Compiling architecture card_game_arch of card_game_vhd_tst
+# End time: 14:30:52 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/diff.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:30:54 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/diff.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity diff
+# -- Compiling architecture behav of diff
+# End time: 14:30:54 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/Logika.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:30:55 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/Logika.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Logika
+# -- Compiling architecture Behavioral of Logika
+# End time: 14:30:55 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:30:57 on Dec 20,2022
+# vcom -reportprogress 300 C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_lnsim_components
+# -- Compiling entity pll
+# -- Compiling architecture RTL of pll
+# End time: 14:30:57 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/random.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:30:58 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/random.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity random
+# -- Compiling architecture behavioral of random
+# End time: 14:30:58 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/rom.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:31:00 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/rom.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity rom
+# -- Compiling architecture SYN of rom
+# End time: 14:31:00 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -93 -work work C:/Users/aleks/Desktop/card_game/vga_sync.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:31:01 on Dec 20,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/aleks/Desktop/card_game/vga_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity vga_sync
+# -- Compiling architecture behavioral of vga_sync
+# End time: 14:31:01 on Dec 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# Loading work.card_game_vhd_tst(card_game_arch)
+# Loading work.card_game(rtl)
+# Loading work.pll(rtl)
+# Loading work.vga_sync(behavioral)
+# Loading work.rom(syn)
+# Loading work.random(behavioral)
+# Loading work.diff(behav)
+# Loading work.logika(behavioral)
+run
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = card_game_vhd_tst.i1.vga_pll.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 65 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 7692.307692
+# Info: output_clock_low_period = 7692.307692

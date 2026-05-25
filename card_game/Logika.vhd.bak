@@ -1,0 +1,294 @@
+library ieee;
+use iEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.all;
+use IEEE.STD_LOGIC_UNSIGNED.all;
+
+
+
+entity Logika is
+port (
+next_positon: in std_logic; --sledeca pozicija
+previous_position: in std_logic;-- prethodna pozicija
+select_position:in std_logic; --okreni kartu;
+clk: in std_logic;
+reset: in std_logic;
+inverted_position: out integer range 0 to 23 ;--izlazna pozicija okrenute karte
+outupside_down_cards: out std_logic_vector (23 downto 0)
+	--jednicie na poziciji okrenute karte
+);
+end entity;
+
+architecture Behavioral of Logika is 
+
+signal upside_down_cards : std_logic_vector (23 downto 0);
+signal position_ready : std_logic; --govori nam kad je pozicija validna
+signal constant_upsidedown : std_logic_vector (23 downto 0); --stalne promene u sistemu 
+signal position : integer range 0 to 23; --pozicija inverovane karte
+type State_t is (stInit, stUpdatePositionPrev,stUpdatePositionNext,stFirstCard,stSecondCard,st5sec,stEnd);
+signal state_reg, next_state : State_t;
+--signal sec5_or_kraj : std_logic;
+signal firstCard : std_logic;
+type arrayofinteger is array (0 to 23) of integer;
+signal myarray : arrayofinteger;
+signal positionFlag : std_logic;
+signal card1 : integer range 0 to 23;
+signal card2 : integer range 0 to 23; 
+signal card2set : std_logic;
+constant C_SECONDS : integer :=5;
+signal counter : integer;
+signal timer : integer;
+begin 
+	
+	myarray(0)<=0;
+	myarray(1)<=0;
+	myarray(2)<=1;
+	myarray(3)<=1;
+	myarray(4)<=2;
+	myarray(5)<=2;
+	myarray(6)<=3;
+	myarray(7)<=3;
+	myarray(8)<=4;
+	myarray(9)<=4;
+	myarray(10)<=5;
+	myarray(11)<=5;
+	myarray(12)<=6;
+	myarray(13)<=6;
+	myarray(14)<=7;
+	myarray(15)<=7;
+	myarray(16)<=8;
+	myarray(17)<=8;
+	myarray(18)<=9;
+	myarray(19)<=9;
+	myarray(20)<=10;
+	myarray(21)<=10;
+	myarray(22)<=11;
+	myarray(23)<=11;
+
+	
+	position_ready<=not upside_down_cards(position);
+
+	STATE_TRANSITION: process (clk) is
+	begin
+		if rising_edge(clk) then
+			if reset = '1' then
+				state_reg <= stInit;
+			else
+				state_reg <= next_state;
+			end if;
+		end if;    
+	end process STATE_TRANSITION;
+		
+	CNT_PROCESS: process (clk) is
+	begin
+		if rising_edge(clk) then
+			case state_reg is
+				when stInit =>
+					positionFlag<='1';
+					position <= 0;
+					if (next_positon='1') then
+						position<=1;
+					end if;
+				when stUpdatePositionNext =>
+					positionFlag<='1';
+					if (next_positon='1' and position/=23) then
+						position<=position+1;
+					elsif (position=23) then
+						position<=0;
+					end if;------
+					if (position_ready='0') then
+						if (position=23) then
+							position<=0;
+						else	
+							position <= position + 1;
+						end if;
+					end if;
+				when stUpdatePositionPrev =>
+					positionFlag<='1';
+					if (previous_position='1' and position /=0) then 
+						position<=position-1;
+					elsif (position = 0) then 
+						position<=23;
+					end if;-------------------
+					if (position_ready='0') then
+						if (position=0) then
+							position<=23;
+						else	
+							position <= position - 1;
+						end if;
+					end if;
+				when stFirstCard =>
+					positionFlag<='1';
+					if (position=23) then
+						position<=0;
+					else 
+						position<=position+1;
+					end if;
+				when stSecondCard =>
+					positionFlag<='1';
+					if (position=23) then
+						position<=0;
+					else 
+						position<=position+1;
+					end if;
+				when st5sec =>
+					positionFlag<='0';
+					--if (position=23) then
+						--position<=0;
+					--else 
+						--position<=position+1;
+					--end if;
+				when stEnd =>
+					positionFlag<='0';
+					--if (position=23) then
+						--position<=0;
+					--else 
+						--position<=position+1;
+					--end if;
+					
+				end case;        
+		end if;    
+	end process;
+	
+	FIRSTCARD_PROCESS: process (clk,reset) is --mozda treba dodati
+	begin
+		if (reset='1') then 
+			firstCard<='0';
+		elsif rising_edge(clk) then
+			if (state_reg=stFirstCard) then 
+			firstCard<='1';
+			elsif (state_reg=stSecondCard)then
+			firstCard<='0';
+			end if;
+		end if;
+	end process FIRSTCARD_PROCESS;
+	
+	
+
+	NEXT_STATE_LOGIC: process (timer,card1,card2,upside_down_cards,state_reg, next_positon, previous_position,select_position,position_ready,firstCard) is
+   begin
+		case (state_reg) is
+			when stInit => 
+				if (next_positon='1') then
+					next_state <=stUpdatePositionNext;
+					next_state <= stUpdatePositionNext;
+				elsif (previous_position= '1') then 
+					next_state <= stUpdatePositionPrev;
+				elsif (select_position = '1') then
+					next_state <= stFirstCard;
+				else 
+					next_state <= stInit;
+				end if;
+			when stUpdatePositionNext =>
+				if (next_positon='1' and position_ready='1') then
+					next_state <= stUpdatePositionNext;
+				elsif (previous_position= '1' and position_ready ='1') then
+					next_state <= stUpdatePositionPrev;
+				elsif (select_position = '1' and firstCard ='0') then -----proveri
+					next_state <= stFirstCard;
+				elsif (select_position = '1' and firstCard ='1') then
+					next_state <= stSecondCard;
+				else
+					next_state<=stUpdatePositionNext;
+				end if;
+			when stUpdatePositionPrev =>
+				if (next_positon='1' and position_ready='1') then
+					next_state <= stUpdatePositionNext;
+				elsif (previous_position= '1' and position_ready ='1') then
+					next_state <= stUpdatePositionPrev;
+				elsif (select_position = '1' and firstCard ='0') then -----proveri
+					next_state <= stFirstCard;
+				elsif (select_position = '1' and firstCard ='1') then
+					next_state <= stSecondCard;
+				else
+					next_state <=stUpdatePositionPrev;
+				end if;
+			when stFirstCard =>
+				next_state<=stupdatePositionNext;
+			when stSecondCard=>
+				if (upside_down_cards="111111111111111111111111") then 
+					next_state<=stEnd;
+				elsif (card1 /=card2) then 
+					next_state<=st5sec;
+				elsif (card1=card2) then 
+					next_state<=stUpdatePositionNext; ----------------------------dopuna
+				else
+					next_state<=stSecondCard;
+				end if;
+			when st5sec=>
+				if (timer = 5) then 
+					next_state<=stUpdatePositionNext;
+				else 
+					next_state<=st5sec;
+				end if;
+			when stEnd=>
+				next_state<=stEnd;
+		end case;    
+   end process NEXT_STATE_LOGIC;
+	
+	PROCESS_TIMER: process (clk) is
+	begin
+	if rising_edge(clk) then
+		case(state_reg) is
+			when st5sec=>
+				 
+				if counter = C_SECONDS - 1 then
+					counter <= 0;
+					timer <= timer + 1;
+				else
+					counter <= counter + 1;
+				end if;
+				
+			when others =>
+				timer<=0;
+				counter<=0;
+		end case;
+	end if;
+	end process;
+	
+	REGISTER_VALUES_PROCESS: process(clk) is 
+	begin
+		if rising_edge(clk) then 
+				if(state_reg=stInit) then
+					upside_down_cards<="000000000000000000000000";
+					constant_upsidedown<="000000000000000000000000";
+					card1<=11;
+					card2<=10;
+				elsif(state_reg=stFirstCard) then
+					upside_down_cards(position)<='1';
+					card1<=myarray(position);
+				elsif(state_reg=stSecondCard) then
+					upside_down_cards(position)<='1';
+					if(card1=card2) then --------------
+						constant_upsidedown<=upside_down_cards;
+						constant_upsidedown(position)<='1'; -------- ovo je mozda prob
+					elsif(card1/=card2) then 
+						upside_down_cards<=constant_upsidedown;
+					end if;
+				elsif(state_reg=stUpdatePositionNext) then
+					if(position_ready='1' and firstCard='1') then
+						card2<=myarray(position);
+					end if;
+				elsif(state_reg=stUpdatePositionPrev) then
+					if(position_ready='1' and firstCard='1') then 
+						card2<=myarray(position);
+					end if;
+				end if;
+		end if;
+	
+	end process;
+	
+	
+	outupside_down_cards<=upside_down_cards;
+	
+	OUTPUT_LOGIC_PROCESS:process(clk) is 
+	begin
+		if rising_edge(clk) then 
+			if (position_ready='1') then
+				inverted_position<=position;
+			end if;
+		end if;
+	end process;
+		
+		 
+
+end Behavioral;

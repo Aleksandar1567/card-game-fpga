@@ -1,0 +1,28 @@
+
+State Machine - |card_game|Logika:log|state_reg
+Name state_reg.stEnd state_reg.st5sec state_reg.stSecondCard state_reg.stFirstCard state_reg.stUpdatePositionNext state_reg.stUpdatePositionPrev state_reg.stInit 
+state_reg.stInit 0 0 0 0 0 0 0 
+state_reg.stUpdatePositionPrev 0 0 0 0 0 1 1 
+state_reg.stUpdatePositionNext 0 0 0 0 1 0 1 
+state_reg.stFirstCard 0 0 0 1 0 0 1 
+state_reg.stSecondCard 0 0 1 0 0 0 1 
+state_reg.st5sec 0 1 0 0 0 0 1 
+state_reg.stEnd 1 0 0 0 0 0 1 
+
+State Machine - |card_game|diff:d3|state_reg
+Name state_reg.s2 state_reg.s1 state_reg.s0 
+state_reg.s0 0 0 0 
+state_reg.s1 0 1 1 
+state_reg.s2 1 0 1 
+
+State Machine - |card_game|diff:d2|state_reg
+Name state_reg.s2 state_reg.s1 state_reg.s0 
+state_reg.s0 0 0 0 
+state_reg.s1 0 1 1 
+state_reg.s2 1 0 1 
+
+State Machine - |card_game|diff:d1|state_reg
+Name state_reg.s2 state_reg.s1 state_reg.s0 
+state_reg.s0 0 0 0 
+state_reg.s1 0 1 1 
+state_reg.s2 1 0 1 

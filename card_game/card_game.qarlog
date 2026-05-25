@@ -1,0 +1,31 @@
+Quartus Prime Archive log --	C:/Users/aleks/Desktop/upv_f1_23/card_game/card_game.qarlog
+
+Archive:	C:/Users/aleks/Desktop/upv_f1_23/card_game/card_game.qar
+Date:		Wed Dec 21 13:35:39 2022
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/aleks/Desktop/upv_f1_23/card_game/Logika.vhd
+C:/Users/aleks/Desktop/upv_f1_23/card_game/card_game.qpf
+C:/Users/aleks/Desktop/upv_f1_23/card_game/card_game.qsf
+C:/Users/aleks/Desktop/upv_f1_23/card_game/card_game.vhd
+C:/Users/aleks/Desktop/upv_f1_23/card_game/diff.vhd
+C:/Users/aleks/Desktop/upv_f1_23/card_game/pll.cmp
+C:/Users/aleks/Desktop/upv_f1_23/card_game/pll.qip
+C:/Users/aleks/Desktop/upv_f1_23/card_game/pll.sip
+C:/Users/aleks/Desktop/upv_f1_23/card_game/pll.spd
+C:/Users/aleks/Desktop/upv_f1_23/card_game/pll.vhd
+C:/Users/aleks/Desktop/upv_f1_23/card_game/pll/pll_0002.qip
+C:/Users/aleks/Desktop/upv_f1_23/card_game/pll/pll_0002.v
+C:/Users/aleks/Desktop/upv_f1_23/card_game/pll_sim/pll.vho
+C:/Users/aleks/Desktop/upv_f1_23/card_game/random.vhd
+C:/Users/aleks/Desktop/upv_f1_23/card_game/rom.cmp
+C:/Users/aleks/Desktop/upv_f1_23/card_game/rom.qip
+C:/Users/aleks/Desktop/upv_f1_23/card_game/rom.vhd
+C:/Users/aleks/Desktop/upv_f1_23/card_game/vga_sync.vhd
+C:/Users/aleks/Desktop/upv_f1_23/card_game/yu.mif
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 20 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

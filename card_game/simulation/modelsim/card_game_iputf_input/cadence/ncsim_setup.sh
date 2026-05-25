@@ -1,0 +1,3 @@
+
+
+ncvhdl -v93 "C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho"

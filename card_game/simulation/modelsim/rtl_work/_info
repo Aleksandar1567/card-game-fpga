@@ -1,0 +1,336 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/aleks/Desktop/card_game/simulation/modelsim
+Ecard_game
+Z1 w1671542006
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/aleks/Desktop/card_game/card_game.vhd
+Z6 FC:/Users/aleks/Desktop/card_game/card_game.vhd
+l0
+L8
+Vdj16V;z`@NGfZ3J78eU2:2
+!s100 Mmkmi4IV:eSI6l<:dgQ>J1
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1671543009
+!i10b 1
+Z9 !s108 1671543009.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/aleks/Desktop/card_game/card_game.vhd|
+Z11 !s107 C:/Users/aleks/Desktop/card_game/card_game.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+DEx4 work 9 card_game 0 22 dj16V;z`@NGfZ3J78eU2:2
+l196
+L25
+VUVhU?oQAfb=?YW_H2ge>a1
+!s100 4Y`48_mAT3X@lF@?0Dl:>2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ecard_game_vhd_tst
+Z14 w1671542773
+Z15 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R3
+R4
+R0
+Z16 8C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+Z17 FC:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht
+l0
+L5
+VJ9I[BJCQ1km?0W9:1D@]<0
+!s100 3La]RjnkiEXna8<eQ=5zZ2
+R7
+32
+Z18 !s110 1671543052
+!i10b 1
+Z19 !s108 1671543052.000000
+Z20 !s90 -reportprogress|300|-work|work|C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht|
+Z21 !s107 C:/Users/aleks/Desktop/card_game/simulation/modelsim/card_game.vht|
+!i113 1
+Z22 o-work work
+R13
+Acard_game_arch
+R15
+R3
+R4
+DEx4 work 17 card_game_vhd_tst 0 22 J9I[BJCQ1km?0W9:1D@]<0
+l43
+L7
+ViF556YTY7[gm^1U?DYGSK0
+!s100 Jb<H_;Wz>K>B=T0f>aCQC0
+R7
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R22
+R13
+Ediff
+Z23 w1446657008
+R2
+R3
+R4
+R0
+Z24 8C:/Users/aleks/Desktop/card_game/diff.vhd
+Z25 FC:/Users/aleks/Desktop/card_game/diff.vhd
+l0
+L6
+Vc[0>mCc4lYo8FO:L3lf[92
+!s100 3kXZ;Tb47?mWbPMR7NSWH1
+R7
+31
+Z26 !s110 1671543054
+!i10b 1
+Z27 !s108 1671543054.000000
+Z28 !s90 -reportprogress|300|-93|-work|work|C:/Users/aleks/Desktop/card_game/diff.vhd|
+Z29 !s107 C:/Users/aleks/Desktop/card_game/diff.vhd|
+!i113 1
+R12
+R13
+Abehav
+R2
+R3
+R4
+DEx4 work 4 diff 0 22 c[0>mCc4lYo8FO:L3lf[92
+l19
+L15
+Vooh<VHGZZ_eKHW=4z7T:D3
+!s100 IDlKV3;:@0Nz0ClM<bm[;1
+R7
+31
+R26
+!i10b 1
+R27
+R28
+R29
+!i113 1
+R12
+R13
+Elogika
+Z30 w1671542421
+R2
+R3
+R4
+R0
+Z31 8C:/Users/aleks/Desktop/card_game/Logika.vhd
+Z32 FC:/Users/aleks/Desktop/card_game/Logika.vhd
+l0
+L7
+V<TB49J00<bFhhQe@?GU6n0
+!s100 @GJ7l`I=HVC6V7AR8`m3e1
+R7
+31
+Z33 !s110 1671543055
+!i10b 1
+Z34 !s108 1671543055.000000
+Z35 !s90 -reportprogress|300|-93|-work|work|C:/Users/aleks/Desktop/card_game/Logika.vhd|
+Z36 !s107 C:/Users/aleks/Desktop/card_game/Logika.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+DEx4 work 6 logika 0 22 <TB49J00<bFhhQe@?GU6n0
+l79
+L50
+VJD:]lH==jR:XiE@TOklFH2
+!s100 R2kVY82flgN9ZhX8YmiLL0
+R7
+31
+R33
+!i10b 1
+R34
+R35
+R36
+!i113 1
+R12
+R13
+Epll
+Z37 w1670789748
+R3
+R4
+Z38 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
+R0
+Z39 8C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho
+Z40 FC:/Users/aleks/Desktop/card_game/pll_sim/pll.vho
+l0
+L33
+VSVS^2I`DA7m^8JK3iCbD=2
+!s100 Bd1aEK;52DW0meJ7M5aKX3
+R7
+32
+Z41 !s110 1671543057
+!i10b 1
+Z42 !s108 1671543057.000000
+Z43 !s90 -reportprogress|300|C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho|
+Z44 !s107 C:/Users/aleks/Desktop/card_game/pll_sim/pll.vho|
+!i113 1
+R13
+Artl
+R3
+R4
+R38
+DEx4 work 3 pll 0 22 SVS^2I`DA7m^8JK3iCbD=2
+l50
+L43
+V@[Q@CfifPMjNIgMOl;@ji1
+!s100 8WTJ6Oa81O5QagX@FZUm<1
+R7
+32
+R41
+!i10b 1
+R42
+R43
+R44
+!i113 1
+R13
+Erandom
+Z45 w1671542261
+R2
+R3
+R4
+R0
+Z46 8C:/Users/aleks/Desktop/card_game/random.vhd
+Z47 FC:/Users/aleks/Desktop/card_game/random.vhd
+l0
+L5
+VhhW3MK[1XHZ;F0JHSc;]U2
+!s100 =Qmh59LE0hV:fY06aWS2:2
+R7
+31
+Z48 !s110 1671543058
+!i10b 1
+Z49 !s108 1671543058.000000
+Z50 !s90 -reportprogress|300|-93|-work|work|C:/Users/aleks/Desktop/card_game/random.vhd|
+Z51 !s107 C:/Users/aleks/Desktop/card_game/random.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+DEx4 work 6 random 0 22 hhW3MK[1XHZ;F0JHSc;]U2
+l28
+L19
+VEbW[j;kLPeGYefHP9E1YK3
+!s100 oJPnDNKOK@1YeSNF`OmIO2
+R7
+31
+R48
+!i10b 1
+R49
+R50
+R51
+!i113 1
+R12
+R13
+Erom
+Z52 w1670789608
+Z53 DPx9 altera_mf 20 altera_mf_components 0 22 gV:l9C^?PSb6]b5V?_jR@3
+R3
+R4
+R0
+Z54 8C:/Users/aleks/Desktop/card_game/rom.vhd
+Z55 FC:/Users/aleks/Desktop/card_game/rom.vhd
+l0
+L42
+Vohhm_T@^4z[bi3@Pf;Zzg0
+!s100 HR@479dl3ndbUE@7`G<PS1
+R7
+31
+Z56 !s110 1671543060
+!i10b 1
+Z57 !s108 1671543060.000000
+Z58 !s90 -reportprogress|300|-93|-work|work|C:/Users/aleks/Desktop/card_game/rom.vhd|
+Z59 !s107 C:/Users/aleks/Desktop/card_game/rom.vhd|
+!i113 1
+R12
+R13
+Asyn
+R53
+R3
+R4
+DEx4 work 3 rom 0 22 ohhm_T@^4z[bi3@Pf;Zzg0
+l56
+L52
+VUoGZNRAJ4BFl4z9m>zWAT3
+!s100 ?LPG;JR4WW;g9VQ<aSZZR3
+R7
+31
+R56
+!i10b 1
+R57
+R58
+R59
+!i113 1
+R12
+R13
+Evga_sync
+Z60 w1446651219
+R2
+R3
+R4
+R0
+Z61 8C:/Users/aleks/Desktop/card_game/vga_sync.vhd
+Z62 FC:/Users/aleks/Desktop/card_game/vga_sync.vhd
+l0
+L5
+VDHhkWeMjGZ7XF`Q>f?kH?1
+!s100 X5dIU72254]:nO>JWYUE73
+R7
+31
+Z63 !s110 1671543061
+!i10b 1
+Z64 !s108 1671543061.000000
+Z65 !s90 -reportprogress|300|-93|-work|work|C:/Users/aleks/Desktop/card_game/vga_sync.vhd|
+Z66 !s107 C:/Users/aleks/Desktop/card_game/vga_sync.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+Z67 DEx4 work 8 vga_sync 0 22 DHhkWeMjGZ7XF`Q>f?kH?1
+l40
+L32
+Z68 V1]2nX:JjAoEf6:iPid[?V2
+Z69 !s100 c`jG6AM4z]Co[CL>?[JAz1
+R7
+31
+R63
+!i10b 1
+R64
+R65
+R66
+!i113 1
+R12
+R13
